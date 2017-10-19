@@ -1,34 +1,52 @@
 import static org.assertj.core.api.Assertions.*;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
+import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+@RunWith(JUnitParamsRunner.class)
 public class FizzBuzzTest {
-    @Test
-    public void shouldReturn1When1() {
-        FizzBuzz fizzBuzz = new FizzBuzz();
-        String result = fizzBuzz.convert(1);
-        assertThat(result).isEqualTo("1");
+
+    /**
+     * FizzBuzz
+     */
+    private FizzBuzz fizzBuzz;
+
+    @Before
+    public void setUp() {
+        fizzBuzz = new FizzBuzz();
     }
 
     @Test
-    public void shouldReturn2When2() {
-        FizzBuzz fizzBuzz = new FizzBuzz();
-        String result = fizzBuzz.convert(2);
-        assertThat(result).isEqualTo("2");
+    @Parameters({
+        "1",
+        "2",
+        "4",
+        "7",
+    })
+    public void shouldReturnNumberAsStringWhenNumberNotMultipleOf3Or5(Integer number) {
+        String result = fizzBuzz.convert(number);
+        assertThat(result).isEqualTo(number.toString());
     }
 
     @Test
-    public void shouldReturn3When3() {
-        FizzBuzz fizzBuzz = new FizzBuzz();
+    public void shouldReturnFizzWhen3() {
         String result = fizzBuzz.convert(3);
         assertThat(result).isEqualTo("Fizz");
     }
 
     @Test
-    public void shouldReturn5When5() {
-        FizzBuzz fizzBuzz = new FizzBuzz();
+    public void shouldReturnBuzzWhen5() {
         String result = fizzBuzz.convert(5);
         assertThat(result).isEqualTo("Buzz");
+    }
+
+    @Test
+    public void shouldReturnFizzWhen6() {
+        String result = fizzBuzz.convert(6);
+        assertThat(result).isEqualTo("Fizz");
     }
 
 }

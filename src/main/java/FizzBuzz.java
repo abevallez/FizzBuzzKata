@@ -2,7 +2,7 @@ public class FizzBuzz {
 
     public String convert(Integer number) {
         String conversion;
-        if (number == 3) {
+        if (number % 3 == 0) {
             conversion =  "Fizz";
         } else if (number == 5) {
             conversion = "Buzz";
