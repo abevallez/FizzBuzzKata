@@ -1,12 +1,14 @@
 public class FizzBuzz {
 
     public String convert(int number) {
+        String conversion;
         if (number == 3) {
-            return "Fizz";
+            conversion =  "Fizz";
+        } else if (number == 2) {
+            conversion =  "2";
+        } else {
+            conversion = "1";
         }
-        if (number == 2) {
-            return "2";
-        }
-        return "1";
+        return conversion;
     }
 }
