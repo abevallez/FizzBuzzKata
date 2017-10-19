@@ -4,6 +4,8 @@ public class FizzBuzz {
         String conversion;
         if (number == 3) {
             conversion =  "Fizz";
+        } else if (number == 5) {
+            conversion = "Buzz";
         } else if (number == 2) {
             conversion =  "2";
         } else {

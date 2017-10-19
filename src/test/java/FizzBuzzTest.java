@@ -24,4 +24,11 @@ public class FizzBuzzTest {
         assertThat(result).isEqualTo("Fizz");
     }
 
+    @Test
+    public void shouldReturn5When5() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String result = fizzBuzz.convert(5);
+        assertThat(result).isEqualTo("Buzz");
+    }
+
 }
