@@ -32,21 +32,24 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void shouldReturnFizzWhen3() {
-        String result = fizzBuzz.convert(3);
+    @Parameters({
+            "3",
+            "6",
+            "9",
+    })
+    public void shouldReturnFizzWhenNumberMultipleOf3(Integer number) {
+        String result = fizzBuzz.convert(number);
         assertThat(result).isEqualTo("Fizz");
     }
 
     @Test
-    public void shouldReturnBuzzWhen5() {
-        String result = fizzBuzz.convert(5);
+    @Parameters({
+            "5",
+            "10",
+            "20"
+    })
+    public void shouldReturnBuzzWhenNumberMultipleOf5(Integer number) {
+        String result = fizzBuzz.convert(number);
         assertThat(result).isEqualTo("Buzz");
     }
-
-    @Test
-    public void shouldReturnFizzWhen6() {
-        String result = fizzBuzz.convert(6);
-        assertThat(result).isEqualTo("Fizz");
-    }
-
 }
