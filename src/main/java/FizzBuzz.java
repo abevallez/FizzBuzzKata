@@ -1,15 +1,13 @@
 public class FizzBuzz {
 
-    public String convert(int number) {
+    public String convert(Integer number) {
         String conversion;
         if (number == 3) {
             conversion =  "Fizz";
         } else if (number == 5) {
             conversion = "Buzz";
-        } else if (number == 2) {
-            conversion =  "2";
         } else {
-            conversion = "1";
+            conversion = number.toString();
         }
         return conversion;
     }
