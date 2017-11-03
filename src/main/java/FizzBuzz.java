@@ -10,12 +10,22 @@ public class FizzBuzz {
      */
     public String convert(Integer number) {
         String conversion;
-        if (isMultipleOf3(number)) {
-            conversion =  "Fizz";
-        } else if (isMultipleOf5(number)) {
-            conversion = "Buzz";
-        } else {
+        if (!isMultipleOf3(number) && !isMultipleOf5(number)) {
             conversion = number.toString();
+        } else {
+            conversion = convertToFizzBuzz(number);
+        }
+
+        return conversion;
+    }
+
+    private String convertToFizzBuzz(Integer number) {
+        String conversion = "";
+        if (isMultipleOf3(number)) {
+            conversion += "Fizz";
+        }
+        if (isMultipleOf5(number)) {
+            conversion += "Buzz";
         }
         return conversion;
     }

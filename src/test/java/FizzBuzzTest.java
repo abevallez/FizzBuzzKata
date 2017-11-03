@@ -52,4 +52,14 @@ public class FizzBuzzTest {
         String result = fizzBuzz.convert(number);
         assertThat(result).isEqualTo("Buzz");
     }
+
+    @Test
+    @Parameters({
+            "15",
+            "30"
+    })
+    public void shouldReturnFizzBuzzWhenNumberMultipleOf3And5(Integer number) {
+        String result = fizzBuzz.convert(number);
+        assertThat(result).isEqualTo("FizzBuzz");
+    }
 }
