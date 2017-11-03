@@ -10,10 +10,10 @@ public class FizzBuzz {
      */
     public String convert(Integer number) {
         String conversion;
-        if (!isMultipleOf3(number) && !isMultipleOf5(number)) {
-            conversion = number.toString();
-        } else {
+        if (shouldBeConverted(number)) {
             conversion = convertToFizzBuzz(number);
+        } else {
+            conversion = number.toString();
         }
 
         return conversion;
@@ -21,10 +21,10 @@ public class FizzBuzz {
 
     private String convertToFizzBuzz(Integer number) {
         String conversion = "";
-        if (isMultipleOf3(number)) {
+        if (isMultipleOf3(number) || number.toString().contains("3")) {
             conversion += "Fizz";
         }
-        if (isMultipleOf5(number)) {
+        if (isMultipleOf5(number) || number.toString().contains("5")) {
             conversion += "Buzz";
         }
         return conversion;
@@ -36,5 +36,12 @@ public class FizzBuzz {
 
     private boolean isMultipleOf3(Integer number) {
         return number % 3 == 0;
+    }
+
+    private boolean shouldBeConverted(Integer number) {
+        return isMultipleOf3(number)
+                || isMultipleOf5(number)
+                || number.toString().contains("3")
+                || number.toString().contains("5");
     }
 }

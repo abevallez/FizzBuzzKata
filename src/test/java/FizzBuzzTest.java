@@ -46,7 +46,7 @@ public class FizzBuzzTest {
     @Parameters({
             "5",
             "10",
-            "20"
+            "20",
     })
     public void shouldReturnBuzzWhenNumberMultipleOf5(Integer number) {
         String result = fizzBuzz.convert(number);
@@ -56,9 +56,50 @@ public class FizzBuzzTest {
     @Test
     @Parameters({
             "15",
-            "30"
+            "30",
     })
     public void shouldReturnFizzBuzzWhenNumberMultipleOf3And5(Integer number) {
+        String result = fizzBuzz.convert(number);
+        assertThat(result).isEqualTo("FizzBuzz");
+    }
+
+    @Test
+    @Parameters({
+            "13",
+            "23",
+            "83"
+    })
+    public void shouldReturnFizzWhenNumberContain3(Integer number) {
+        String result = fizzBuzz.convert(number);
+        assertThat(result).isEqualTo("Fizz");
+    }
+
+    @Test
+    @Parameters({
+            "52",
+            "58"
+    })
+    public void shouldReturnBuzzWhenNumberContain5(Integer number) {
+        String result = fizzBuzz.convert(number);
+        assertThat(result).isEqualTo("Buzz");
+    }
+
+    @Test
+    @Parameters({
+            "534",
+            "582"
+    })
+    public void shouldReturnFizzBuzzWhenNumberContain3And5(Integer number) {
+        String result = fizzBuzz.convert(number);
+        assertThat(result).isEqualTo("FizzBuzz");
+    }
+
+    @Test
+    @Parameters({
+            "35",
+            "535"
+    })
+    public void shouldReturnFizzBuzzWhenNumberContain3or5AndMultipleOf3And5(Integer number) {
         String result = fizzBuzz.convert(number);
         assertThat(result).isEqualTo("FizzBuzz");
     }
