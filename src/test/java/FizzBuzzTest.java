@@ -26,7 +26,7 @@ public class FizzBuzzTest {
         "4",
         "7",
     })
-    public void shouldReturnNumberAsStringWhenNumberNotMultipleOf3Or5(Integer number) {
+    public void shouldReturnNumberAsStringWhenNumberNotMultipleOf3nor5(Integer number) {
         String result = fizzBuzz.convert(number);
         assertThat(result).isEqualTo(number.toString());
     }

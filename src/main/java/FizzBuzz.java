@@ -1,5 +1,13 @@
 public class FizzBuzz {
 
+    /**
+     * Convert to string when number is not multiple of 3 nor 5
+     * Convert to Fizz when number is multiple of 3
+     * Convert to Buzz when number is multiple of 5
+     *
+     * @param number
+     * @return
+     */
     public String convert(Integer number) {
         String conversion;
         if (isMultipleOf3(number)) {
